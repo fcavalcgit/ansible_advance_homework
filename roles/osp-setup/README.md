@@ -1,38 +1,20 @@
-Role Name
-=========
+osp-setup
+=================
 
-A brief description of the role goes here.
+This role is a collection of tasks to setup the OSP workstation. The task include:
+- Create Flavor: to add the osp flavor that will be used
+- Create Keypair: to generate and add a keypair from OpenStack
+- Create Security Groups: to add the security groups from OpenStack that will be used by the 3-tier-app deployment
+- Create Image: to download and create an RHEL OpenStack image
+- Create Network: to create the OpenStack network according to the requirements
 
 Requirements
 ------------
 
-Any pre-requisites that may not be covered by Ansible itself or the role should be mentioned here. For instance, if the role uses the EC2 module, it may be a good idea to mention in this section that the boto package is required.
+OpenStack lab must be up.
 
 Role Variables
 --------------
 
-A description of the settable variables for this role should go here, including any variables that are in defaults/main.yml, vars/main.yml, and any variables that can/should be set via parameters to the role. Any variables that are read from other roles and/or the global scope (ie. hostvars, group vars, etc.) should be mentioned here as well.
-
-Dependencies
-------------
-
-A list of other roles hosted on Galaxy should go here, plus any details in regards to parameters that may need to be set for other roles, or variables that are used from other roles.
-
-Example Playbook
-----------------
-
-Including an example of how to use your role (for instance, with variables passed in as parameters) is always nice for users too:
-
-    - hosts: servers
-      roles:
-         - { role: username.rolename, x: 42 }
-
-License
--------
-
-BSD
-
-Author Information
-------------------
-
-An optional section for the role authors to include contact information, or a website (HTML is not allowed).
+osp_networks: contains the Public and Private facing networks configuration
+osp_router: contains the configuration for the OSP router
